@@ -1,11 +1,11 @@
 # -Sign-Language-Fingerspelling-Assistant-ASL-Alphabet-
 
 
-The data link
+# The data link
 
 https://www.kaggle.com/datasets/grassknoted/asl-alphabet/data
 
-# -Description-
+# Description
 The data set is a collection of images of alphabets from the American Sign Language, separated in 29 folders which represent the various classes.
 
 
