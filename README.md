@@ -22,6 +22,9 @@ The test data set contains a mere 29 images, to encourage the use of real-world 
 
 
 
+2- EfficientNetB0 with early stopping stopped at 19 epochs and got accuracy : 0.9325 on Training / val_accuracy: 0.9672 on Validation 
+
+<img width="1409" height="55" alt="image" src="https://github.com/user-attachments/assets/d8d4a6f5-387d-4d61-a778-1f0e21ba0039" />
 
 
 
@@ -29,8 +32,9 @@ The test data set contains a mere 29 images, to encourage the use of real-world 
 
 
 
+# Deployment
 
-
+We used streamlit to provide us with a simple GUI 
 
 
 
