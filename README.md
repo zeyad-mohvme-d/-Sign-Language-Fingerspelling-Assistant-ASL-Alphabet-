@@ -19,3 +19,40 @@ The test data set contains a mere 29 images, to encourage the use of real-world 
 1- CNN with 30 epoch got accuracy: 0.9670 on Training / val_accuracy: 0.9734 on Validation
 
 <img width="1432" height="67" alt="image" src="https://github.com/user-attachments/assets/2c01df2a-d463-4047-b475-67f7e3d9f2e8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Models Google Drive Links 
+Link : https://drive.google.com/drive/folders/1TF81jTd-MxCYPQrp-ac_d0ZJz9f7Qfnb?usp=sharing
