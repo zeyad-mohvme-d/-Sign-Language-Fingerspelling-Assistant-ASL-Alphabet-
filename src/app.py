@@ -24,7 +24,7 @@ models = {
         "Models/EfficientV2.keras",
         custom_objects={"preprocess_input": custom_preprocess_input}
     ),
-    # "ResNet50 (224x224)": tf.keras.models.load_model("Models/ResNet50_model.h5"),
+    # "ResNet50 (224x224)": tf.keras.models.load_model("Models/ResNet50_model.h5")
 }
 
 # ===========================
