@@ -28,6 +28,10 @@ The test data set contains a mere 29 images, to encourage the use of real-world 
 
 
 
+3- ResNet50   with  10 epoch  and got  accuracy: 0.9827 - val_accuracy: 0.9920
+
+<img width="952" height="44" alt="image" src="https://github.com/user-attachments/assets/a5c9f177-96ed-4e22-9371-47f14b0fa1e8" />
+
 
 
 
