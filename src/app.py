@@ -18,14 +18,16 @@ def custom_preprocess_input(x):
 # Load Models
 # ===========================
 models = {
-    "CNN (128x128)": tf.keras.models.load_model("Models/cnn_model.h5"),
+    "CNN (128x128)": tf.keras.models.load_model("Models\CNN_upd_model.keras"),
     "EfficientNetB0 (128x128)": tf.keras.models.load_model("Models/EfficientNetB0_model.h5"),
     "EfficientNetB0_V2 (128x128)": tf.keras.models.load_model(
         "Models/EfficientV2.keras",
         custom_objects={"preprocess_input": custom_preprocess_input}
     ),
-    # "ResNet50 (224x224)": tf.keras.models.load_model("Models/ResNet50_model.h5")
+    "ResNet50 (224x224)": tf.keras.models.load_model("Models\ResNet50_model_updated.keras")
 }
+
+
 
 # ===========================
 # Class Names
