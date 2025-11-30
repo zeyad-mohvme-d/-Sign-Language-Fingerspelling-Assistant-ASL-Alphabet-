@@ -18,7 +18,7 @@ def custom_preprocess_input(x):
 # Load Models
 # ===========================
 models = {
-    "CNN (128x128)": tf.keras.models.load_model("Models\CNN_upd_model.keras"),
+    "CNN (128x128)": tf.keras.models.load_model("Models\CNN_model_V1.keras"),
     "EfficientNetB0 (128x128)": tf.keras.models.load_model("Models/EfficientNetB0_model.h5"),
     "EfficientNetB0_V2 (128x128)": tf.keras.models.load_model(
         "Models/EfficientV2.keras",
@@ -35,7 +35,7 @@ models = {
 class_names = [
     'A','B','C','D','E','F','G','H','I','J','K','L','M',
     'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
-    'SPACE','NOTHING','DELETE'
+    'del', 'nothing', 'space'  
 ]
 
 # ===========================
@@ -45,7 +45,7 @@ def prepare_image(image, model_name):
     if "CNN" in model_name:
         target_size = (128, 128)
         img = image.resize(target_size)
-        img = np.array(img) / 255.0
+        img = np.array(img) 
         return img.reshape(1, 128, 128, 3)
 
     elif "EfficientNet" in model_name:
