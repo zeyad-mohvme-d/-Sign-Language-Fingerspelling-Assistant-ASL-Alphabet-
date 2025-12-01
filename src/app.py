@@ -3,9 +3,9 @@ import numpy as np
 from PIL import Image
 import tensorflow as tf
 
-# ===========================
-# Register custom preprocessing function
-# ===========================
+# # ===========================
+# # Register custom preprocessing function
+# # ===========================
 from tensorflow.keras.applications.efficientnet import preprocess_input as efficient_preprocess
 from tensorflow.keras.applications.resnet50 import preprocess_input as resnet_preprocess
 from tensorflow.keras.utils import register_keras_serializable
@@ -62,25 +62,68 @@ def prepare_image(image, model_name):
         img = resnet_preprocess(img)
         return np.expand_dims(img, axis=0)
 
-# ===========================
-# Streamlit UI
-# ===========================
+# # ===========================
+# # Streamlit UI
+# # ===========================
+# st.title("ASL Alphabet Recognition (CNN + ResNet50 + EfficientNetB0)")
+# st.write("Upload an image and choose a model to predict the ASL letter.")
+
+# model_choice = st.selectbox(
+#     "Select Model:",
+#     list(models.keys())
+# )
+
+# uploaded_file = st.file_uploader("Upload Hand Sign Image", type=["jpg", "jpeg", "png"])
+
+# if uploaded_file is not None:
+#     image = Image.open(uploaded_file).convert("RGB")
+#     st.image(image, caption="Uploaded Image", width=300)
+
+#     if st.button("Predict"):
+#         st.write("🔍 Processing...")
+#         img_ready = prepare_image(image, model_choice)
+#         model = models[model_choice]
+
+#         prediction = model.predict(img_ready)
+#         predicted_index = np.argmax(prediction)
+#         predicted_letter = class_names[predicted_index]
+#         confidence = float(np.max(prediction)) * 100
+
+#         st.subheader(f"Predicted Letter: **{predicted_letter}**")
+#         st.write(f"Confidence: **{confidence:.2f}%**")
+
+
 st.title("ASL Alphabet Recognition (CNN + ResNet50 + EfficientNetB0)")
-st.write("Upload an image and choose a model to predict the ASL letter.")
+st.write("Upload an image OR capture one using your camera.")
 
-model_choice = st.selectbox(
-    "Select Model:",
-    list(models.keys())
-)
+model_choice = st.selectbox("Select Model:", list(models.keys()))
 
+# ---- Upload Section ----
 uploaded_file = st.file_uploader("Upload Hand Sign Image", type=["jpg", "jpeg", "png"])
 
-if uploaded_file is not None:
+# ---- Camera Section ----
+camera_image = st.camera_input("Or Take a Photo")
+
+# Determine which image to use
+image = None
+source = None
+
+if uploaded_file:
     image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, caption="Uploaded Image", width=300)
+    source = "Uploaded Image"
+
+elif camera_image:
+    image = Image.open(camera_image).convert("RGB")
+    source = "Captured Photo"
+
+
+# ---- If an image exists, show it and allow prediction ----
+if image is not None:
+    st.image(image, caption=source, width=300)
 
     if st.button("Predict"):
         st.write("🔍 Processing...")
+
         img_ready = prepare_image(image, model_choice)
         model = models[model_choice]
 
