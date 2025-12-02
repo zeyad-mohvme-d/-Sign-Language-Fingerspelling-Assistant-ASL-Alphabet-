@@ -246,7 +246,7 @@ def prepare_image(image, model_name):
     if model_name == "CNN (128x128)":
         target_size = (128, 128)
         img = image.resize(target_size)
-        img_array = np.array(img).astype(np.float32) / 255.0
+        img_array = np.array(img).astype(np.float32) 
         return img_array.reshape(1, 128, 128, 3), img_array
     
     elif model_name == "EfficientNetB0 (128x128)":
