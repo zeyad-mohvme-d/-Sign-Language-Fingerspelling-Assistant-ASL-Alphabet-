@@ -1126,6 +1126,33 @@ st.sidebar.markdown("## 🤖 Available Models")
 for model_name in models.keys():
     st.sidebar.markdown(f"- {model_name}")
 
+
+
+model_performance = {
+    "CNN (128x128)": {
+        "accuracy": 0.97,
+        "input_size": "128×128",
+        "type": "CNN"
+    },
+    "EfficientNetB0 (128x128)": {
+        "accuracy": 0.96,
+        "input_size": "128×128",
+        "type": "EfficientNet"
+    },
+    "EfficientNetB0_V2 (128x128)": {
+        "accuracy": 0.98,
+        "input_size": "128×128",
+        "type": "EfficientNet"
+    },
+    "ResNet50 (224x224)": {
+        "accuracy": 0.98,
+        "input_size": "224×224",
+        "type": "ResNet"
+    }
+}
+
+
+
 # ===========================
 # Page 1: Single Model Prediction 
 # ===========================
@@ -1462,31 +1489,39 @@ elif page == "📊 Model Comparison":
 # Page 3: Model Performance
 # ===========================
 elif page == "📈 Model Performance":
-    st.markdown('<h2 class="sub-header">Model Performance Metrics</h2>', unsafe_allow_html=True)
-    
+    st.markdown(
+        '<h2 class="sub-header">Model Performance Metrics</h2>',
+        unsafe_allow_html=True
+    )
+
     col_select, col_info = st.columns([2, 1])
-    
+
     with col_select:
         selected_model = st.selectbox(
             "Select model to view performance:",
-            list(models.keys()),
+            list(model_performance.keys()),
             key="perf_select"
         )
-    
-    with col_info:
-        if selected_model:
-            accuracy = 0.90
-            st.metric("Model Accuracy", f"{accuracy*100:.1f}%")
-    
+
     if selected_model:
+        perf = model_performance[selected_model]
+
+        with col_info:
+            st.metric(
+                "Model Accuracy",
+                f"{perf['accuracy'] * 100:.1f}%"
+            )
+
         col1, col2, col3 = st.columns(3)
+
         with col1:
             st.metric("Classes", "29")
+
         with col2:
-            input_size = "128×128" if "128" in selected_model else "224×224"
-            st.metric("Input Size", input_size)
+            st.metric("Input Size", perf["input_size"])
+
         with col3:
-            st.metric("Model Type", selected_model.split()[0])
+            st.metric("Model Type", perf["type"])
 
 # ===========================
 # Footer
