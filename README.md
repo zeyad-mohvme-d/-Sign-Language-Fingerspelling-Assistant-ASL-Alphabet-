@@ -28,7 +28,12 @@ The test data set contains a mere 29 images, to encourage the use of real-world 
 
 
 
-3- ResNet50   with  10 epoch  and got  accuracy: 0.9827 - val_accuracy: 0.9920
+3- EfficientNEtB0_V2 with early stopping stopped at 19 epochs and got accuracy : 0.9925 on Training / val_accuracy: 0.9872 on Validation
+
+![WhatsApp Image 2025-12-22 at 3 30 14 AM](https://github.com/user-attachments/assets/7b2d4604-b605-4f0a-a865-1fe25b94d4e2)
+
+
+4- ResNet50   with  10 epoch  and got  accuracy: 0.9827 - val_accuracy: 0.9920
 
 <img width="952" height="44" alt="image" src="https://github.com/user-attachments/assets/a5c9f177-96ed-4e22-9371-47f14b0fa1e8" />
 
