@@ -37,6 +37,13 @@ Four different deep learning architectures were trained and compared:
 
 ![CNN Accuracy](https://github.com/user-attachments/assets/2c01df2a-d463-4047-b475-67f7e3d9f2e8)
 
+
+<img width="549" height="413" alt="image" src="https://github.com/user-attachments/assets/cc0e2a3e-daf8-4c36-bc93-3e41be2d37b2" />
+
+
+
+
+
 ---
 
 ### 2️⃣ EfficientNetB0  
