@@ -109,3 +109,19 @@ Grad-CAM generates a heatmap highlighting the regions of the input image that co
 
 ## 📁 Project Structure
 
+
+│
+├── notebooks/
+│ └── ASL_Project.ipynb # Training and evaluation notebook
+│
+├── Models/
+│ ├── CNN_model_V1.keras
+│ ├── EfficientV2.keras
+│ └── ResNet50_model_updated.keras
+│
+├── src/
+│ └── Demo.py # Streamlit GUI application
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
